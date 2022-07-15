@@ -1,7 +1,6 @@
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
-const config = 1
-module.exports = (req, res) => {
+export default (req, res) => {
   createProxyMiddleware({
     target: 'http://218.60.150.150/',
     onProxyReq: (proxyReq, req, res) => {
