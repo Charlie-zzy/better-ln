@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>辽宁综合素质评价平台·改</title>
+</head>
+
+<body
+  class="mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-theme-layout-light">
+
+  <!-- AppBar -->
+  <div class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+      <a href="index.html" class="mdui-typo-title">辽宁综合素质评价平台·改</a>
+
+      <div class="mdui-toolbar-spacer"></div>
+
+      <span class="mdui-typo" id="login-state"></span>
+      <button id="login" class="mdui-btn mdui-btn-icon mdui-ripple">
+        <i class="mdui-icon material-icons">person</i>
+      </button>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="mdui-tab mdui-color-theme mdui-tab-centered" mdui-tab>
+      <a href="#page-0">基本信息</a>
+      <a href="#page-1">思想品德</a>
+      <a href="#page-2" disabled>研究性学习</a>
+      <a href="#page-3" disabled>身心健康</a>
+      <a href="#page-4">运动经历</a>
+      <a href="#page-5">心理素质</a>
+      <a href="#page-6" disabled>艺术素养</a>
+      <a href="#page-7" disabled>社会实践</a>
+      <a href="#page-8" disabled>期末总结</a>
+      <a href="#page-9">毕业鉴定</a>
+    </div>
+  </div>
+
+  <!-- Page 0 -->
+  <div id="page-0" class="mdui-p-a-2 mdui-typo">
+    <h3>基本信息（只读）
+    </h3>
+    <div id="page-0-1" class="mdui-row"></div>
+    <h3>家庭信息
+      <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-color-theme" style="margin:0 0 3px 8px;" id="page-0-add"><i
+          class="mdui-icon material-icons">add</i></button>
+    </h3>
+    <div id="page-0-2"></div>
+    <h3>个性特长 & 人生规划</h3>
+    <div id="page-0-3"></div>
+  </div>
+
+  <!-- Page 1 -->
+  <div id="page-1" class="mdui-p-a-2 mdui-typo">
+    选择年级：<select class="mdui-select" mdui-select id="page-1-selector">
+      <option value="高一上学期">高一上学期</option>
+      <option value="高一下学期">高一下学期</option>
+      <option value="高二上学期">高二上学期</option>
+      <option value="高二下学期">高二下学期</option>
+      <option value="高三上学期">高三上学期</option>
+      <option value="高三下学期">高三下学期</option>
+    </select>
+    <div id="page-1-1" class="mdui-row"></div>
+
+    <h1 style="text-align: center;font-weight: 600;font-size: 3em;">思品丁真</h1>
+    <h4 style="text-align: center">鉴定为：想德美</h4>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page-2" class="mdui-p-a-2 mdui-typo">
+  </div>
+
+  <!-- Page 3 -->
+  <div id="page-3" class="mdui-p-a-2 mdui-typo">
+  </div>
+
+  <!-- Page 4 -->
+  <div id="page-4" class="mdui-p-a-2 mdui-typo">
+    <div class="mdui-row center-content">
+      <div class="mdui-card mdui-col-xs-3 mdui-col-md-2">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">高一</div>
+        </div>
+        <div class="mdui-card-content" id="page-4-1"></div>
+      </div>
+      <div class="mdui-card mdui-col-xs-3 mdui-col-md-2">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">高二</div>
+        </div>
+        <div class="mdui-card-content" id="page-4-2"></div>
+      </div>
+      <div class="mdui-card mdui-col-xs-3 mdui-col-md-2">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">高三</div>
+        </div>
+        <div class="mdui-card-content" id="page-4-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 5 -->
+  <div id="page-5" class="mdui-p-a-2 mdui-typo">
+    <div class="mdui-card">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">高一</div>
+        <div id="page-5-1" class="mdui-row"></div>
+      </div>
+      <div class="mdui-card-content" id="page-4-1"></div>
+    </div>
+    <div class="mdui-card">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">高二</div>
+        <div id="page-5-2" class="mdui-row"></div>
+      </div>
+      <div class="mdui-card-content" id="page-4-2"></div>
+    </div>
+    <div class="mdui-card">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">高三</div>
+        <div id="page-5-3" class="mdui-row"></div>
+      </div>
+      <div class="mdui-card-content" id="page-4-3"></div>
+    </div>
+  </div>
+
+  <!-- Page 6 -->
+  <div id="page-6" class="mdui-p-a-2 mdui-typo">
+  </div>
+
+  <!-- Page 7 -->
+  <div id="page-7" class="mdui-p-a-2 mdui-typo">
+  </div>
+
+  <!-- Page 8 -->
+  <div id="page-8" class="mdui-p-a-2 mdui-typo">
+  </div>
+
+  <!-- Page 9 -->
+  <div id="page-9" class="mdui-p-a-2 mdui-typo">
+    <h1 style="text-align: center;font-weight: 600;font-size: 3em;">肄业丁真</h1>
+    <h4 style="text-align: center">鉴定为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定
+      为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定
+      为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定
+      为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：鉴定 为：<span
+        style="color: red;font-weight: 600;">Uncaught RangeError: Maximum 鉴定 stack size exceeded.</span></h4>
+
+  </div>
+
+
+  <!-- Save Button -->
+  <button class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme" id="save-btn"><i
+      class="mdui-icon material-icons">save</i></button>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

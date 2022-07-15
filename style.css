@@ -1,0 +1,18 @@
+.mdui-card,
+.mdui-dialog {
+  border-radius: 8px;
+}
+.mdui-card {
+  margin: 16px;
+}
+.mdui-row.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mdui-textfield-floating-label .mdui-textfield-label {
+  transform: scale(1) translateY(32px);
+}
+
+.show-show-way {
+}
