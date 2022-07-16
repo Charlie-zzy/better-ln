@@ -244,7 +244,7 @@ class Page0 {
       const el = !target.type
         ? target.parentElement.parentElement
         : target.parentElement
-      pages[0].deleteFamilyMember(el.parentElement)
+      pages[0].deleteFamilyMember(el)
     })
   }
   async deleteFamilyMember(dom) {
@@ -261,8 +261,7 @@ class Page0 {
           buttonText: '撤销',
           onButtonClick: () => {
             mdui.$('#page-0-2').append(dom)
-            this.save('撤销')
-            globalRefresh()
+            this.save('撤销').then(globalRefresh)
           },
         })
       })
