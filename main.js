@@ -11,7 +11,7 @@ mdui.$('#page-0-add').on('click', () => pages[0].addFamilyMember({}, true))
 mdui.$('#save-btn').on('click', globalSave)
 mdui.$('select').on('change', globalRefresh)
 
-const proxy = 'https://better-ln-proxy.vercel.app'
+const proxy = 'https://zhszpj.vercel.app/proxy'
 const $ = (e) => document.getElementById(e)
 
 const $store = {
