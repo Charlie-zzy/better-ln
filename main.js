@@ -9,6 +9,7 @@ mdui.$('.mdui-tab > a:not([disabled])').on('click', ({ target }) => {
 })
 mdui.$('#page-0-add').on('click', () => pages[0].addFamilyMember({}, true))
 mdui.$('#save-btn').on('click', globalSave)
+mdui.$('#help-btn').on('click', () => mdui.alert('qwq'))
 mdui.$('select').on('change', globalRefresh)
 
 const proxy = 'https://zhszpj.vercel.app/proxy'
@@ -25,7 +26,7 @@ const $store = {
 }
 
 // login
-if (!$store.get('name')) $store.set('name', '未登录')
+if (!$store.get('isLogin')) $store.set('name', '未登录')
 $('login-state').textContent = $store.get('name')
 
 $('login').onclick = () => {
@@ -248,6 +249,7 @@ class Page0 {
     })
   }
   async deleteFamilyMember(dom) {
+    mdui.snackbar('发送删除请求中...')
     await fetch(proxy + '/deleteJtcyxx.do?SESSION=' + $store.get('session'), {
       method: 'POST',
       headers: {
