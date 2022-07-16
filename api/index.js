@@ -1,8 +1,12 @@
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export default (req, res) => {
+  let target = ''
+    if (req.url.startsWith('/backend')) {
+    target = 'http://218.60.150.150/'
+  }
   createProxyMiddleware({
-    target: 'http://218.60.150.150/',
+    target,
     onProxyReq: (proxyReq, req, res) => {
       proxyReq.setHeader('cookie', 'SESSION=' + req.query.SESSION)
     },
