@@ -18,7 +18,7 @@ export default (req, res) => {
       proxyRes.headers['MONSTER-XIAN-BEI'] = '114514.1919810'
       try {
         proxyRes.headers['set-cookie'] =
-          proxyRes.headers['set-cookie'][0].split(';')[0]+';Domain=zhszpj.vercel.app'
+          proxyRes.headers['set-cookie'][0].split(';')[0] + ';Path=/'
       } catch {}
     },
   })(req, res)
