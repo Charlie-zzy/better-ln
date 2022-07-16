@@ -2,13 +2,16 @@ import { createProxyMiddleware } from 'http-proxy-middleware'
 
 export default (req, res) => {
   let target = ''
-    if (req.url.startsWith('/backend')) {
+    if (req.url.startsWith('/proxy')) {
     target = 'http://218.60.150.150/'
   }
   createProxyMiddleware({
     target,
     onProxyReq: (proxyReq, req, res) => {
       proxyReq.setHeader('cookie', 'SESSION=' + req.query.SESSION)
+    },
+        pathRewrite: {
+      '^/proxy/': '/'
     },
     onProxyRes: (proxyRes, req, res) => {
       proxyRes.headers['Access-Control-Allow-Origin'] = '*'
