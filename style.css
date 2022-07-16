@@ -16,3 +16,18 @@
 
 .show-show-way {
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading > div {
+  z-index: 114;
+  position: absolute;
+  top: calc((100vh - 100px) / 2);
+}
+.loading > .spinner {
+  transform: scale(2.5);
+  padding-bottom: 20px;
+}

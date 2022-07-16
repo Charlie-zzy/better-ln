@@ -249,7 +249,7 @@ class Page0 {
     })
   }
   async deleteFamilyMember(dom) {
-    if(!dom.dataset.id) return
+    if (!dom.dataset.id) return
     mdui.snackbar('发送删除请求中...')
     await fetch(proxy + '/deleteJtcyxx.do?SESSION=' + $store.get('session'), {
       method: 'POST',
@@ -617,10 +617,12 @@ function handlePageChange(id) {
 }
 
 function globalRefresh() {
+  mdui.$('.loading').show()
   if (!$store.get('isLogin')) return
   document.oninput = null
   setTimeout(() => {
     pages[$store.get('pageId')].refresh().then(() => {
+      mdui.$('.loading').hide()
       document.oninput = () => $('save-btn').classList.remove('mdui-fab-hide')
     }),
       50
