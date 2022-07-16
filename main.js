@@ -249,6 +249,7 @@ class Page0 {
     })
   }
   async deleteFamilyMember(dom) {
+    if(!dom.dataset.id) return
     mdui.snackbar('发送删除请求中...')
     await fetch(proxy + '/deleteJtcyxx.do?SESSION=' + $store.get('session'), {
       method: 'POST',
