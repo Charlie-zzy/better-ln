@@ -11,10 +11,13 @@
   align-items: center;
 }
 .mdui-textfield-floating-label .mdui-textfield-label {
-  transform: scale(1) translateY(32px);
+  transform: translateY(32px);
 }
 
-.show-show-way {
+.show-show-way button {
+  position: absolute;
+  bottom: 24px;
+  right: 6%;
 }
 
 .loading {
