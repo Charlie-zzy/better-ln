@@ -13,6 +13,7 @@ mdui.$('#help-btn').on('click', () => mdui.alert('qwq'))
 mdui.$('select').on('change', globalRefresh)
 
 const proxy = 'https://zhszpj.vercel.app/proxy'
+// const proxy = 'http://localhost:666'
 const $ = (e) => document.getElementById(e)
 
 const $store = {
@@ -348,7 +349,7 @@ class Page1 {
       zzdw: '组织单位',
       __5: 2,
       nian: '年份',
-      __6: 6,
+      __6: 5,
       hdksrq: '开始时间',
       hdjsrq: '结束时间',
     },
@@ -368,11 +369,10 @@ class Page1 {
       .then((e) => e.json())
       .catch(() => mdui.snackbar('信息获取失败'))
 
-    this.xsjbxxid = items[0].xsjbxxid
-
+    let str = ''
     items.forEach((item) => {
-      let size = 3,
-        str = `<div class="mdui-card mdui-col-xs-12 mdui-col-md-5 show-show-way"><div class="mdui-card-content mdui-row">`
+      let size = 3
+      str += `<div class="mdui-card mdui-col-xs-12 mdui-col-md-5 show-show-way"><div class="mdui-card-content mdui-row">`
       item.state =
         item.sfyx +
         ' - ' +
@@ -402,9 +402,9 @@ class Page1 {
         item[key] ?? ''
       }" disabled/></div>`
       }
-
-      $('page-1-1').innerHTML = str + `</div></div>`
+      str += `<button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">edit</i></button></div></div>`
     })
+    $('page-1-1').innerHTML = str
   }
   async refresh() {
     return this.getInfo().then(mdui.mutation).catch(console.warn)
@@ -444,8 +444,7 @@ class Page1 {
   }
 }
 class Page2 {}
-class Page3 {}
-class Page4 {
+class Page3 {
   mapping = {
     info: {
       sg: '身高(cm)',
@@ -488,7 +487,7 @@ class Page4 {
     })
   }
   async refresh() {
-    return this.getInfo().then(mdui.mutation).catch(console.warn)
+    return this.getInfo().catch(console.warn).then(mdui.mutation)
   }
   async save() {
     const payload = {}
@@ -523,7 +522,8 @@ class Page4 {
         mdui.snackbar('保存失败')
       })
   }
-}
+} // OK
+class Page4 {}
 class Page5 {
   mapping = {
     info: {
@@ -556,7 +556,7 @@ class Page5 {
     })
   }
   async refresh() {
-    return this.getInfo().then(mdui.mutation).catch(console.warn)
+    return this.getInfo().catch(console.warn).then(mdui.mutation)
   }
   async save() {
     const payload = {}
@@ -589,7 +589,7 @@ class Page5 {
         mdui.snackbar('保存失败')
       })
   }
-}
+} // OK
 class Page6 {}
 class Page7 {}
 class Page8 {}
@@ -608,8 +608,6 @@ const pages = [
   new Page9(),
 ]
 
-if (!$store.get('pageId')) $store.set('pageId', 0)
-mdui.$('.mdui-tab').children()[$store.get('pageId')].click()
 
 function handlePageChange(id) {
   $store.set('pageId', id)
@@ -640,3 +638,7 @@ document.onkeydown = (event) => {
     globalSave()
   }
 }
+
+mdui.$('.loading').hide()
+if (!$store.get('pageId')) $store.set('pageId', 0)
+mdui.$('.mdui-tab').children()[$store.get('pageId')].click()
