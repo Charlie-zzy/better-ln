@@ -9,7 +9,19 @@ mdui.$('.mdui-tab > a:not([disabled])').on('click', ({ target }) => {
 })
 mdui.$('#page-0-add').on('click', () => pages[0].addFamilyMember({}, true))
 mdui.$('#save-btn').on('click', globalSave)
-mdui.$('#help-btn').on('click', () => mdui.alert('qwq'))
+mdui.$('#help-btn').on('click', () =>
+  mdui.alert(`<div class="mdui-card mdui-color-theme-accent">
+  <div class="mdui-card-header">
+    <img class="mdui-card-header-avatar" src="https://cdn.jsdelivr.net/gh/Charlie-zzy/imgCDN/favicon.png"/>
+    <div class="mdui-card-header-title">Charlie</div>
+    <div class="mdui-card-header-subtitle">作者（某高一菜鸡）</div>
+  </div></div>
+  <div class="mdui-typo">
+  <p>这个综合素质评价平台的质量太高了<del>有一说一懂的都懂</del>，令我感觉到了来自设计师的灵魂洗礼！！</p>
+  <p>所以我就重写了前端（原生js，因为实在是懒得用框架了），越写越感觉不对劲，结果我发现这整个就是一个<strong>大屎山</strong>，赶紧跑路.jpg</p>
+  <p>如果有人想做完剩下的部分的话，去 <a target="_blank" href="https://github.com/Charlie-zzy/better-ln">Github 仓库</a> 上改源码吧，跨域代理什么的我已经解决力~</p>
+  </div>`)
+)
 mdui.$('select').on('change', globalRefresh)
 
 const proxy = 'https://zhszpj.vercel.app/proxy'
@@ -608,15 +620,14 @@ const pages = [
   new Page9(),
 ]
 
-
 function handlePageChange(id) {
   $store.set('pageId', id)
   globalRefresh()
 }
 
 function globalRefresh() {
-  mdui.$('.loading').show()
   if (!$store.get('isLogin')) return
+  mdui.$('.loading').show()
   document.oninput = null
   setTimeout(() => {
     pages[$store.get('pageId')].refresh().then(() => {
